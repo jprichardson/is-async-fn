@@ -18,6 +18,18 @@ Install
 Usage
 -----
 
+### isAsyncFn
+
+Function signature: `isAsynFn(function)`
+
+Parameters:
+- `function`: The function to pass.
+
+Returns: Type `boolean`. Returns `true` if the `function` was defined with the
+`async` keyword.
+
+**Example:**
+
 ```js
 import isAsyncFn from 'is-async-fn'
 
