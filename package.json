@@ -4,7 +4,7 @@
   "description": "Check if something is an ES7 async function",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard && find ./tests -name *.test.js -exec node --require ./tests/_babel.js {} \\; | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,17 @@
   },
   "homepage": "https://github.com/jprichardson/is-async-fn#readme",
   "devDependencies": {
-    "standard": "^5.4.1"
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-3": "^6.1.18",
+    "babel-regenerator-runtime": "^6.2.0",
+    "standard": "^5.4.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.2.2",
+    "tape-promise": "^1.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
