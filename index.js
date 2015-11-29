@@ -7,9 +7,7 @@ module.exports = function isAsyncFn (fn) {
   if (fn.constructor && fn.constructor.name === 'AsyncFunction') return true
 
   // check if Babel
-  return isAsyncFnBabel5(fn)
-    ? true
-    : isAsyncFnBabel6(fn)
+  return isAsyncFnBabel5(fn) || isAsyncFnBabel6(fn)
 }
 
 // very hacky
