@@ -23,7 +23,7 @@ Usage
 **Signature:** `isAsyncFn(function)`
 
 **Parameters:**
-- `function`: The function to pass.
+- `function`: The function to check.
 
 **Returns:** Type `boolean`. Returns `true` if the `function` was defined with the
 `async` keyword.
