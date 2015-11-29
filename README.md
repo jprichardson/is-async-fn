@@ -25,7 +25,6 @@ console.log(isAsyncFn(function () {})) // => false
 console.log(isAsyncFn(async function () {})) // => true
 ```
 
-
 License
 -------
 
