@@ -1,6 +1,6 @@
 {
   "name": "is-async-fn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check if something is an ES7 async function",
   "main": "index.js",
   "scripts": {
