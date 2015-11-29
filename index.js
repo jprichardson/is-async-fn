@@ -6,20 +6,21 @@ module.exports = function isAsyncFn (fn) {
   // https://tc39.github.io/ecmascript-asyncawait/#async-function-constructor-properties
   if (fn.constructor && fn.constructor.name === 'AsyncFunction') return true
 
+  var fnStr = fn.toString()
+
   // check if Babel
-  return isAsyncFnBabel5(fn) || isAsyncFnBabel6(fn)
+  return isAsyncFnBabel5(fn, fnStr) || isAsyncFnBabel6(fn, fnStr)
 }
 
 // very hacky
-function isAsyncFnBabel5 (fn) {
+function isAsyncFnBabel5 (fn, fnStr) {
   var fnname = fn.name.replace(/\$/g, '\\$')
   var str = '\n.+return regeneratorRuntime.async\\(function ' + fnname
-  return !!fn.toString().match(str)
+  return !!fnStr.match(str)
 }
 
 // very hacky, this feels like a horrible solution
-function isAsyncFnBabel6 (fn) {
-  var fnStr = fn.toString()
+function isAsyncFnBabel6 (fn, fnStr) {
   // 2nd condition is for anonymous async
   return !!fnStr.match('return ref.apply\\(this, arguments\\);') || !!fnStr.match('var gen = fn.apply\\(this, arguments\\);')
 }
