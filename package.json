@@ -1,0 +1,32 @@
+{
+  "name": "is-async-fn",
+  "version": "1.0.0",
+  "description": "Check if something is an ES7 async function",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jprichardson/is-async-fn.git"
+  },
+  "keywords": [
+    "function",
+    "fn",
+    "func",
+    "async",
+    "await",
+    "es7",
+    "is",
+    "check"
+  ],
+  "author": "JP Richardson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jprichardson/is-async-fn/issues"
+  },
+  "homepage": "https://github.com/jprichardson/is-async-fn#readme",
+  "devDependencies": {
+    "standard": "^5.4.1"
+  }
+}
