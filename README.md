@@ -20,7 +20,7 @@ Usage
 
 ### isAsyncFn
 
-**Signature:** `isAsynFn(function)`
+**Signature:** `isAsyncFn(function)`
 
 **Parameters:**
 - `function`: The function to pass.
