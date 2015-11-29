@@ -20,12 +20,12 @@ Usage
 
 ### isAsyncFn
 
-Function signature: `isAsynFn(function)`
+**Signature:** `isAsynFn(function)`
 
-Parameters:
+**Parameters:**
 - `function`: The function to pass.
 
-Returns: Type `boolean`. Returns `true` if the `function` was defined with the
+**Returns:** Type `boolean`. Returns `true` if the `function` was defined with the
 `async` keyword.
 
 **Example:**
