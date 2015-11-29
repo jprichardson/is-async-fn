@@ -8,8 +8,8 @@ module.exports = function isAsyncFn (fn) {
 
   var fnStr = fn.toString()
 
-  // check if Babel
-  return isAsyncFnBabel5(fn, fnStr) || isAsyncFnBabel6(fn, fnStr)
+  // check if Babel / Tonic
+  return isAsyncFnBabel5(fn, fnStr) || isAsyncFnBabel6(fn, fnStr) || isTonic(fn, fnStr)
 }
 
 // very hacky
@@ -23,4 +23,9 @@ function isAsyncFnBabel5 (fn, fnStr) {
 function isAsyncFnBabel6 (fn, fnStr) {
   // 2nd condition is for anonymous async
   return !!fnStr.match('return ref.apply\\(this, arguments\\);') || !!fnStr.match('var gen = fn.apply\\(this, arguments\\);')
+}
+
+// hacky, not sure what Tonic is using...
+function isTonic (fn, fnStr) {
+  return !!fnStr.match('return \\(function step\\(generator\\)')
 }
