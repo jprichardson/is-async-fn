@@ -22,7 +22,7 @@ function isAsyncFnBabel5 (fn, fnStr) {
 // very hacky, this feels like a horrible solution
 function isAsyncFnBabel6 (fn, fnStr) {
   // 2nd condition is for anonymous async
-  return !!fnStr.match('return ref.apply\\(this, arguments\\);') || !!fnStr.match('var gen = fn.apply\\(this, arguments\\);')
+  return !!fnStr.match('return _?ref.apply\\(this, arguments\\);') || !!fnStr.match('var gen = fn.apply\\(this, arguments\\);')
 }
 
 // hacky, not sure what Tonic is using...
